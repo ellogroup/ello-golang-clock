@@ -7,7 +7,7 @@ build-format-test: build format test
 .PHONY: build
 build:
 	docker build --platform linux/amd64 -t $(DOCKER_IMG_TAGGED) .
-	$(DOCKER_RUN) go mod tidy
+	docker run --rm -it --platform linux/amd64 -v ${PWD}/go.mod:/src/app/go.mod -v ${PWD}/go.sum:/src/app/go.sum $(DOCKER_IMG_TAGGED) go mod tidy
 
 .PHONY: format
 format:
