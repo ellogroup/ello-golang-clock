@@ -22,7 +22,7 @@ func (s system) Until(t time.Time) time.Duration {
 	return time.Until(t)
 }
 
-func System() Clock {
+func NewSystem() Clock {
 	return &system{}
 }
 
@@ -42,6 +42,6 @@ func (f fixed) Until(t time.Time) time.Duration {
 	return t.Sub(f.fixed)
 }
 
-func Fixed(t time.Time) Clock {
+func NewFixed(t time.Time) Clock {
 	return &fixed{t}
 }
