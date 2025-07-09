@@ -49,7 +49,7 @@ func TestFixed(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			assert.Equalf(t, tt.want, Fixed(tt.args.t), "Fixed(%v)", tt.args.t)
+			assert.Equalf(t, tt.want, NewFixed(tt.args.t), "NewFixed(%v)", tt.args.t)
 		})
 	}
 }
